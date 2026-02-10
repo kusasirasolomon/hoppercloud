@@ -41,16 +41,38 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
 
 
+// Get modal
+const contactModal = document.getElementById('contactModal');
+
+// Open modal when any "Start Your Project" button is clicked
+document.addEventListener('click', (e) => {
+    if (e.target.classList.contains('form-btn')) {
+        contactModal.style.display = 'flex'; // or 'block' if you prefer
+        document.body.style.overflow = 'hidden';
+    }
+});
+
+// Close modal when clicking the close button or outside the modal
+document.addEventListener('click', (e) => {
+    if (e.target.classList.contains('close-btn') || e.target === contactModal) {
+        contactModal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+    }
+});
 
 
 
-document.addEventListener('DOMContentLoaded', () => {
+
+
+
+
+/*document.addEventListener('DOMContentLoaded', () => {
 
     const contactForm = document.getElementById('contactForm');
     const contactModal = document.getElementById('contactModal');
     const formButtons = document.querySelectorAll('.form-btn');
 
-    /* OPEN FORM FROM ANY BUTTON */
+    // OPEN FORM FROM ANY BUTTON 
     formButtons.forEach(btn => {
         btn.addEventListener('click', () => {
             if (contactModal) {
@@ -60,7 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    /* FORM SUBMIT */
+    // FORM SUBMIT 
     if (contactForm) {
         contactForm.addEventListener('submit', (e) => {
             e.preventDefault();
@@ -92,7 +114,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 // Modal functionality
-/*const openFormBtn = document.querySelector('.form-btn');
+const openFormBtn = document.querySelector('.form-btn');
 const contactModal = document.getElementById('contactModal');
 const closeModalBtn = document.getElementById('closeModal');
 
@@ -148,7 +170,7 @@ if (contactForm) {
         }, 1500);
     });
 }
-*/
+
 
 
 // Get modal and form
@@ -194,7 +216,7 @@ if (contactForm) {
             document.body.style.overflow = 'auto';
         }, 1500);
     });
-}
+}*/
 
 // Animate elements on scroll
 const observerOptions = {
